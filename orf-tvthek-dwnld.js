@@ -8,13 +8,12 @@
 // ==/UserScript==
 
 
+var element = document.evaluate('/html/head/script[2]/text()' ,document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+var almost_json = element.singleNodeValue.data.replace(/ /g,'');
+var json = almost_json.match(/initializeAdworx\(\[(.*?)\]\)/);
 
-	var element = document.evaluate('/html/head/script[2]/text()' ,document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-	var almost_json = element.singleNodeValue.data.replace(/ /g,'');
-	var json = almost_json.match(/initializeAdworx\(\[(.*?)\]\)/);
-
-	obj = JSON.parse(json[1]);
-	var str = obj.values.segment.playlist_item_array.sources[13].src;
+obj = JSON.parse(json[1]);
+var str = obj.values.segment.playlist_item_array.sources[13].src;
 
 var note=document.getElementById("DwnldLnk");
 if(!note){
