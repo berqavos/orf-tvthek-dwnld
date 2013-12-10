@@ -23,7 +23,7 @@ if(!note){
  document.body.appendChild(note);
 }
 
-note.innerHTML="video link \n" + vurl;
+note.innerHTML="" + vurl;
 note.style.position="fixed";
 note.style.top="2em";
 note.style.left="0";
