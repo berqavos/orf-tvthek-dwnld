@@ -13,7 +13,7 @@ var almost_json = element.singleNodeValue.data.replace(/ /g,'');
 var json = almost_json.match(/initializeAdworx\(\[(.*?)\]\)/);
 
 obj = JSON.parse(json[1]);
-var str = obj.values.segment.playlist_item_array.sources[13].src;
+var vl = obj.values.segment.playlist_item_array.sources[13].src;
 
 var note=document.getElementById("DwnldLnk");
 if(!note){
@@ -22,7 +22,7 @@ if(!note){
  document.body.appendChild(note);
 }
 
-note.innerHTML="<a href=" + str + ">click me to download video</a>";
+note.innerHTML="video link \n" + str;
 note.style.position="fixed";
 note.style.top="2em";
 note.style.left="0";
